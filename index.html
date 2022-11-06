@@ -8,8 +8,8 @@
 	<!-- <style>body{opacity: 0;}</style> -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&_v=20221104213154" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.min.css?_v=20221104213154">
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap&_v=20221107001210" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.min.css?_v=20221107001210">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,7 +26,7 @@
 				<div class="nav-panel__icon icon-catalog-menu"></div>
 				<div class="nav-panel__text">Каталог</div>
 			</div>
-			<div class="nav-panel__item nav-panel-cart">
+			<div class="nav-panel__item nav-panel-cart" data-popup=".popup-cart">
 				<div class="nav-panel__icon icon-cart"></div>
 				<div class="nav-panel__text">Корзина</div>
 			</div>
@@ -111,7 +111,7 @@
 			<div class="header__bottom">
 				<div class="header__container">
 					<div class="header__addition">
-						<a href="home.html" class="header__logo header__sticky-logo logo">
+						<a class="header__logo header__sticky-logo logo" href="home.html">
 							<picture><source srcset="img/logo.webp" type="image/webp"><img src="img/logo.png" alt="" /></picture>
 						</a>
 						<div class="header__catalog popup-hover">
@@ -128,7 +128,7 @@
 								<div class="icon-mic"></div>
 							</form>
 						</div>
-						<div class="header__bag">
+						<div class="header__bag" data-popup=".popup-cart">
 							<div class="icon-cart"></div>
 							<div>Корзина</div>
 						</div>
@@ -1037,17 +1037,179 @@
 		</footer>
 
 	</div>
-	<!-- <div id="popup" aria-hidden="true" class="popup">
-	<div class="popup__wrapper">
-		<div class="popup__content">
-			<button data-close type="button" class="popup__close">Закрыть</button>
-			<div class="popup__text">
-				Text
+	<div class="popup popup-cart" aria-hidden="true">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__title-block">
+						<div class="popup__title">Корзина</div>
+						<div class="popup__close" data-close type="button"></div>
+					</div>
+					<div class="popup__main">
+						<div class="popup__items">
+							<div class="popup__item">
+								<div class="popup__card">
+									<picture><source srcset="img/cards/cards-3.webp" type="image/webp"><img class="popup__img" src="img/cards/cards-3.png" /></picture>
+									<div class="popup__info">
+										<div class="popup__item-name">Влагозащищенный ультразвуковой толщиномер УТ-1М-IP</div>
+										<div class="popup__item-code">Код: 22513000-1</div>
+									</div>
+								</div>
+								<div class="popup__buttons">
+									<button class="popup__button popup__button-decrement"></button>
+									<div class="popup__count">1</div>
+									<button class="popup__button popup__button-increment"></button>
+								</div>
+								<div class="popup__extra">
+									<button class="popup__bin icon-bin"></button>
+									<div class="popup__cost">15 900 грн</div>
+								</div>
+							</div>
+							<div class="popup__item">
+								<div class="popup__card">
+									<picture><source srcset="img/cards/cards-3.webp" type="image/webp"><img class="popup__img" src="img/cards/cards-3.png" /></picture>
+									<div class="popup__info">
+										<div class="popup__item-name">Влагозащищенный ультразвуковой толщиномер УТ-1М-IP</div>
+										<div class="popup__item-code">Код: 22513000-1</div>
+									</div>
+								</div>
+								<div class="popup__buttons">
+									<button class="popup__button popup__button-decrement"></button>
+									<div class="popup__count">1</div>
+									<button class="popup__button popup__button-increment"></button>
+								</div>
+								<div class="popup__extra">
+									<button class="popup__bin icon-bin"></button>
+									<div class="popup__cost">15 900 грн</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup__buy-panel">
+							<button class="popup__continue" data-close>Продолжить покупки</button>
+							<div class="popup__block">
+								<div class="popup__total">
+									<div class="popup__total-text">Итого, без доставки:</div>
+									<div class="popup__block">
+										<div class="popup__stock-cost">70 000 грн</div>
+										<div class="popup__total-cost">83 480 грн</div>
+									</div>
+								</div>
+								<button class="popup__buy-button">Оформить заказ</button>
+							</div>
+						</div>
+						<div class="popup__spoller" data-spollers>
+							<div class="popup__spoller-title" data-spoller>
+								<div>Вместе с этим товаром покупают</div>
+								<div class="icon-chevron-right"></div>
+							</div>
+							<div class="popup__spollers-block">
+								<div class="swiper swiper-popup cards">
+									<div class="swiper-wrapper">
+										<a class="swiper-slide cards__item" href="#">
+											<picture><source srcset="img/cards/cards-6.webp" type="image/webp"><img class="cards__img" src="img/cards/cards-6.png" alt="cards-1" /></picture>
+											<div class="cards__content">
+												<div class="cards__top">
+													<div class="cards__code">Код: 22513000-1</div>
+													<div class="cards__title">
+														Комплект мер твердости по Роквеллу МТР
+													</div>
+												</div>
+												<div class="cards__bottom">
+													<div class="cards__cost">
+														<div>17 580 грн</div>
+														<div class="cards__info">Цена указана с НДС</div>
+													</div>
+													<div class="cards__button icon-cart"></div>
+												</div>
+											</div>
+										</a>
+										<a class="swiper-slide cards__item" href="#">
+											<picture><source srcset="img/cards/cards-7.webp" type="image/webp"><img class="cards__img" src="img/cards/cards-7.png" alt="cards-1" /></picture>
+											<div class="cards__content">
+												<div class="cards__top">
+													<div class="cards__code">Код: 22513000-1</div>
+													<div class="cards__title">
+														Комплект мер твердости по Бринеллю МТБ
+													</div>
+												</div>
+												<div class="cards__bottom">
+													<div class="cards__cost">
+														<div>17 580 грн</div>
+														<div class="cards__info">Цена указана с НДС</div>
+													</div>
+													<div class="cards__button icon-cart"></div>
+												</div>
+											</div>
+										</a>
+										<a class="swiper-slide cards__item" href="#">
+											<picture><source srcset="img/cards/cards-8.webp" type="image/webp"><img class="cards__img" src="img/cards/cards-8.png" alt="cards-1" /></picture>
+											<div class="cards__content">
+												<div class="cards__top">
+													<div class="cards__code">Код: 22513000-1</div>
+													<div class="cards__title">
+														Твердомер динамический Т-Д2 (c опциональным Bluetooth и Android)
+													</div>
+												</div>
+												<div class="cards__bottom">
+													<div class="cards__cost">
+														<div>17 580 грн</div>
+														<div class="cards__info">Цена указана с НДС</div>
+													</div>
+													<div class="cards__button icon-cart"></div>
+												</div>
+											</div>
+										</a>
+										<a class="swiper-slide cards__item" href="#">
+											<picture><source srcset="img/cards/cards-9.webp" type="image/webp"><img class="cards__img" src="img/cards/cards-9.png" alt="cards-1" /></picture>
+											<div class="cards__content">
+												<div class="cards__top">
+													<div class="cards__code">Код: 22513000-1</div>
+													<div class="cards__title">
+														Стационарный твердомер металлов по Роквеллу NOVOTEST ТС-Р
+													</div>
+												</div>
+												<div class="cards__bottom">
+													<div class="cards__cost">
+														<div>17 580 грн</div>
+														<div class="cards__info">Цена указана с НДС</div>
+													</div>
+													<div class="cards__button icon-cart"></div>
+												</div>
+											</div>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="popup__delimitation">
+							<div class="popup__line"></div>
+							<div>Или</div>
+							<div class="popup__line"></div>
+						</div>
+						<div class="popup__order">
+							<div class="popup__block">
+								<div class="popup__order-title">Заказать по телефону</div>
+								<div class="popup__order-text">Мы перезвоним Вам в течение 10 минут.
+									Или оформите заказ на сайте самостоятельно.</div>
+							</div>
+							<form class="popup__block" action="#">
+								<input class="popup__input" type="text" placeholder="+38 (0)">
+								<button class="popup__form-button" type="submit">Купить в один клик</button>
+							</form>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div> -->
-	<script src="js/app.min.js?_v=20221104213154"></script>
+
+	<div data-spollers class="spollers">
+		<div class="spollers__item">
+			<button type="button" data-spoller class="spollers__title">Заголовок спойлера</button>
+			<div class="spollers__body">Контент спойлера</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20221107001210"></script>
 </body>
 
 </html>
